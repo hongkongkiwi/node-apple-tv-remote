@@ -1,0 +1,16 @@
+{
+  "name": "appletv-remote",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Andy Savage <andy@savage.hk> (http://andy.savage.hk)",
+  "license": "MIT",
+  "dependencies": {
+    "bluebird": "^3.4.1",
+    "request-promise": "^3.0.0",
+    "underscore": "^1.8.3"
+  }
+}
