@@ -14,6 +14,7 @@ var foundRemote = function(remote) {
     console.log('Pairing with ' + hostName);
     finder.stopSearching();
     finder.removeAllListeners(FOUND_EVENT);
+    console.log('Your Pairing Pincode is: ' + remote.getPinCode());
     remote.pair(240).then(function(guid) {
       console.log('Successfully Paired with ' + hostName);
       console.log('GUID is ' + guid);
