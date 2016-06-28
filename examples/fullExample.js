@@ -15,11 +15,16 @@ var foundRemote = function(remote) {
     finder.stopSearching();
     finder.removeAllListeners(FOUND_EVENT);
     remote.pair(240).then(function(guid) {
-      console.log('success!');
+      console.log('Successfully Paired with ' + hostName);
+      console.log('GUID is ' + guid);
       finder = null;
+      return remote.login(guid);
     }, function(msg) {
       console.log('Pairing Failed!',msg);
-    }).catch(console.error);
+    }).catch(console.error)
+    .then(function(sessionId) {
+      console.log('Successfully Logged In (sessionId=' + sessionId + ')');
+    });
   }
 };
 
