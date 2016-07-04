@@ -1,4 +1,4 @@
-var Remote = require('../lib/Remote');
+var Remote = require('../../index').client;
 
 var remote = new Remote('Apple-TV.local.');
 // remote.serverInfo().then(function(serverInfo) {
@@ -9,7 +9,9 @@ var remote = new Remote('Apple-TV.local.');
 //   console.log('Got ctrlInit',serverInfo);
 // });
 
-remote.login('0xA50880EE02A0B77A').then(function(sessionId) {
+remote.isHostUp().then(function() {
+  return remote.login('0xA50880EE02A0B77A');
+}).then(function(sessionId) {
   console.log('Successfully Logged In (sessionId=' + sessionId + ')');
   // remote.logout().then(function() {
   //   console.log('Successfully Logged Out');
